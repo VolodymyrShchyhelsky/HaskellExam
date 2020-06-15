@@ -15,7 +15,7 @@ insertEl x (y:ys) = if x < y
 insertEl x [] = [x]
 
 insSort :: [Int] -> [Int] -> [Int]
-insSort sorted (first_el : other) = (insertEl first_el sorted) ++ (other)
+insSort sorted (first_el : other) = insSort (insertEl first_el sorted) (other)
 insSort sorted [] = sorted
 
 main = do
